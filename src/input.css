@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: Manrope, system-ui, sans-serif;
+    }
+    h1, h2, h3, h4 {
+        font-family: Anton, system-ui, sans-serif;
+    }
+}
+
+@layer components {
+    .select {
+        @apply p-3 rounded-xl font-light pr-6
+    }
+    .card-recipe {
+        @apply bg-white
+    }
+    .subtitle {
+        @apply uppercase text-grey font-medium text-sm
+    }
+}

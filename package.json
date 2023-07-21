@@ -1,0 +1,16 @@
+{
+  "name": "petitsplats",
+  "version": "1.0.0",
+  "description": "P7 OPC",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "tlwd" : "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Guillaume LEDUC",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "type": "module"
+}
