@@ -15,12 +15,30 @@
 
 @layer components {
     .select {
-        @apply p-3 rounded-xl font-light pr-6
+        @apply rounded-xl bg-white w-44 font-light cursor-pointer
     }
     .card-recipe {
         @apply bg-white
     }
     .subtitle {
         @apply uppercase text-grey font-medium text-sm
+    }
+    .options-overlay {
+        @apply h-52 overflow-y-scroll drop-shadow-xl
+    }
+    .options-overlay::-webkit-scrollbar {
+        width: 0em;
+    }
+    
+    .options-overlay::-webkit-scrollbar-thumb {
+        @apply bg-yellow rounded-full
+    }
+    
+    .options-overlay::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    .option {
+        @apply p-2 w-full text-left font-light hover:bg-yellow text-sm
     }
 }
