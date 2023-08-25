@@ -23,22 +23,27 @@
     .subtitle {
         @apply uppercase text-grey font-medium text-sm
     }
-    .options-overlay {
-        @apply h-52 overflow-y-scroll drop-shadow-xl
-    }
-    .options-overlay::-webkit-scrollbar {
+    .list-item::-webkit-scrollbar {
         width: 0em;
     }
     
-    .options-overlay::-webkit-scrollbar-thumb {
+    .list-item::-webkit-scrollbar-thumb {
         @apply bg-yellow rounded-full
     }
     
-    .options-overlay::-webkit-scrollbar-track {
+    .list-item::-webkit-scrollbar-track {
         background-color: transparent;
     }
     
     .option {
         @apply p-2 w-full text-left font-light hover:bg-yellow text-sm
+    }
+
+    .list-item {
+        @apply h-52 overflow-y-scroll
+    }
+
+    .tag {
+        @apply p-4 capitalize text-sm rounded-xl bg-yellow flex items-center justify-between gap-4
     }
 }

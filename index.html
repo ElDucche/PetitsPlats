@@ -24,7 +24,6 @@
         </section>
 
         <section id="recettes" class="bg-lightgrey p-8">
-
             <div id="recettes-header" class=" my-4 flex items-center justify-between">
                 <div id="filtres" class="flex justify-between gap-4">
                     <div id="ingredients" class="select relative">
@@ -37,13 +36,14 @@
                             </span>
                         </div>
                         <div class="options-overlay scrollbar absolute z-50 bg-white rounded-b-xl pt-4 top-12">
-                            <div class="p-2 flex items-center">
+                            <form class="p-2 flex items-center">
                                 <input type="text" class=" outline-none border-t border-l border-b border-black/20 p-1 w-full">
-                                <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
+                                <button disabled><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                   </svg>
                                 </button>
-                            </div>
+                            </form>
+                            <div id="ingredients-list" class="list-item"></div>
                         </div>
                     </div>
                     <div name="appareils" id="appareils" class="select relative">
@@ -56,13 +56,14 @@
                             </span>
                         </div>
                         <div class="options-overlay scrollbar absolute z-50 bg-white rounded-b-xl pt-4 top-12">
-                            <div class="p-2 flex items-center">
+                            <form class="p-2 flex items-center">
                                 <input type="text" class=" outline-none border-t border-l border-b border-black/20 p-1 w-full">
-                                <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
+                                <button disabled><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                   </svg>
                                 </button>
-                            </div>
+                            </form>
+                            <div id="appareils-list" class="list-item"></div>
                         </div>
                     </div>
                     <div id="ustensiles" class="select relative">
@@ -75,18 +76,20 @@
                             </span>
                         </div>
                         <div class="options-overlay scrollbar absolute z-50 bg-white rounded-b-xl pt-4 top-12">
-                            <div class="p-2 flex items-center">
+                            <form class="p-2 flex items-center">
                                 <input type="text" class=" outline-none border-t border-l border-b border-black/20 p-1 w-full">
-                                <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
+                                <button disabled><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-[2.1rem] stroke-black/20 border-t border-b border-r border-black/20">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                   </svg>
                                 </button>
-                            </div>
+                            </form>
+                            <div id="ustensiles-list" class="list-item"></div>
                         </div>
                     </div>
                 </div>
                 <h3 class="text-2xl">1500 recettes</h3>
             </div>
+            <div id="tags" class="flex flex-wrap gap-4"></div>
             <div id="filtered-recipes" class="grid grid-cols-3 gap-8 my-4 z-0">
             </div>
         </section>
