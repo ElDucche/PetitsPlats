@@ -8,7 +8,7 @@ export const createCard = (data) => {
     } = data
 
     const div = document.createElement('div')
-    div.classList.add("bg-white", "rounded-xl", "relative", "shadow-lg") 
+    div.classList.add("bg-white", "rounded-xl", "relative", "shadow-lg", "animate-[smooth_200ms_ease-in-out_forwards]") 
 
     // <img src="/src/img/Recette01.jpg" alt="recette 1" class="object-cover h-72 w-full rounded-t-xl">
     const img = document.createElement('img')

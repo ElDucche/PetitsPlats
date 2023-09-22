@@ -11,11 +11,14 @@
     h1, h2, h3, h4 {
         font-family: Anton, system-ui, sans-serif;
     }
+    input[type="checkbox"] {
+        @apply hidden
+    }
 }
 
 @layer components {
     .select {
-        @apply rounded-xl bg-white w-44 font-light cursor-pointer
+        @apply relative w-44 bg-white rounded-xl grid grid-cols-2 place-items-center px-4
     }
     .card-recipe {
         @apply bg-white
@@ -39,11 +42,18 @@
         @apply p-2 w-full text-left font-light hover:bg-yellow text-sm
     }
 
+    .options-overlay {
+        @apply col-span-2 absolute z-50 bg-white rounded-b-xl pt-4 top-11 w-full animate-[smooth_200ms_ease-in-out_forwards]
+    }
+
     .list-item {
         @apply h-52 overflow-y-scroll
     }
 
     .tag {
         @apply p-4 capitalize text-sm rounded-xl bg-yellow flex items-center justify-between gap-4
+    }
+    .fleche {
+        @apply w-3 h-3 border-t-2 border-r-2 border-black rotate-45 transition-all
     }
 }
