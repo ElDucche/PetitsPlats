@@ -25,8 +25,8 @@ export const displayRecipes = (recipesData) => {
        div.appendChild(h3)
        gallery.appendChild(div)
     }
-    recipesData.forEach((recipe) => {
-        const card = createCard(recipe)
+    recipesData.forEach((recipe, index) => {
+        const card = createCard(recipe, index)
         gallery.appendChild(card)
     })
     document.getElementById('total').textContent = `${recipesData.length} recettes`
