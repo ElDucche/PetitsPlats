@@ -115,50 +115,47 @@ const ustensilsChoosen = []
 const filterRecipesAndSearch = () => {
     const searchValue = document.getElementById('find').value.trim().toLowerCase();
     let filteredRecipes = [];
-    const allEmpty = ingredientsChoosen.length === 0 && appareilsChoosen.length === 0 && ustensilsChoosen.length === 0;
-    
+
     for (const recipe of recipes) {
         // Filtrer par tags d'ingrédients, appareils et ustensiles choisis
-        if (!allEmpty) {
-        let includeRecipe = false;
-        
+        let ingredientsMatch = true;
+        let appareilMatch = true;
+        let ustensilesMatch = true;
+
         if (ingredientsChoosen.length > 0) {
-            for (const ingredient of recipe.ingredients) {
-            if (ingredientsChoosen.includes(ingredient.ingredient)) {
-                includeRecipe = true;
-                break;
-            }
-            }
-        }
-    
-        if (appareilsChoosen.length > 0 && !includeRecipe) {
-            if (appareilsChoosen.includes(recipe.appliance)) {
-            includeRecipe = true;
+            for (const ingredient of ingredientsChoosen) {
+                if (!recipe.ingredients.find(item => item.ingredient === ingredient)) {
+                    ingredientsMatch = false;
+                    break;
+                }
             }
         }
-    
-        if (ustensilsChoosen.length > 0 && !includeRecipe) {
-            for (const ustensile of recipe.ustensils) {
-            if (ustensilsChoosen.includes(ustensile)) {
-                includeRecipe = true;
-                break;
+
+        if (appareilsChoosen.length > 0) {
+            for (const appareil of appareilsChoosen) {
+                if (recipe.appliance !== appareil) {
+                    appareilMatch = false;
+                    break;
+                }
             }
+        }
+
+        if (ustensilsChoosen.length > 0) {
+            for (const ustensile of ustensilsChoosen) {
+                if (!recipe.ustensils.includes(ustensile)) {
+                    ustensilesMatch = false;
+                    break;
+                }
             }
         }
-    
-        if (!includeRecipe) {
-            continue; // Passer à la recette suivante si elle ne correspond pas aux critères
+
+        if (ingredientsMatch && appareilMatch && ustensilesMatch) {
+            // La recette satisfait tous les critères de filtre
+            // Filtrer par la recherche par nom de recette
+            if (searchValue.length < 3 || recipe.name.toLowerCase().includes(searchValue)) {
+                filteredRecipes.push(recipe); // Ajouter la recette filtrée
+            }
         }
-        }
-    
-        // Filtrer par la recherche par nom de recette
-        if (searchValue.length >= 3) {
-        if (!recipe.name.toLowerCase().includes(searchValue)) {
-            continue; // Passer à la recette suivante si le nom ne correspond pas à la recherche
-        }
-        }
-    
-        filteredRecipes.push(recipe); // Ajouter la recette filtrée
     }
 
     console.log(filteredRecipes)

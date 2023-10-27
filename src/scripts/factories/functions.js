@@ -1,5 +1,4 @@
 import { createCard } from "./components.js";
-import recipes from "../../data/recipes.js";
 // Filtre un tableau pour éliminer les doublons
 export const filteredArrayOfArray = (array) => {
     const filteredArray = []
@@ -60,11 +59,16 @@ const createSticker = (item, array) => {
     </svg>`
     const updateEvent = new Event("update");
     button.addEventListener('click', (e) => {
-        array.splice(array.indexOf(e.currentTarget.innerText), 1)
-        console.log(array)
-        e.currentTarget.parentElement.remove()
-        document.getElementById('tags').dispatchEvent(updateEvent)
-    })
+        const text = item.toLowerCase(); // Obtenir le texte en minuscules à partir de l'attribut de données
+        const index = array.findIndex(item => item.toLowerCase() === text);
+        if (index !== -1) {
+            array.splice(index, 1);
+            console.log(array);
+            e.currentTarget.parentElement.remove();
+            document.getElementById('tags').dispatchEvent(updateEvent);
+        }
+    });
+    
     const span = document.createElement('span')
     span.innerText = item
     div.appendChild(span)
