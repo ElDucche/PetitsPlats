@@ -5,11 +5,12 @@
   "main": "index.html",
   "scripts": {
     "test": "test",
-    "tlwd" : "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "tlwd": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "author": "Guillaume LEDUC",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.52.0",
     "tailwindcss": "^3.3.2"
   },
   "type": "module"

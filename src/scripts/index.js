@@ -167,7 +167,7 @@ const filterRecipesAndSearch = () => {
 document.getElementById('tags').addEventListener('update', filterRecipesAndSearch)
 document.getElementById("find").addEventListener("input", filterRecipesAndSearch);
 
-
+// Lancement du programme
 const init = () => {
     displayRecipes(dataToLoad);
     setIngredientsOptions()

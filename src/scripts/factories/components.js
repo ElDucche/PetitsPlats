@@ -1,4 +1,4 @@
-export const createCard = (data, index) => {
+export const createCard = (data) => {
     const {
         image,
         name,
